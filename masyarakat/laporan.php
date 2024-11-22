@@ -34,7 +34,7 @@ if(isset($_POST['submit'])) {
         if($status) {
             header("Location: dashboard-masyarakat.php");
         } else {
-            echo "Terjaid kesalahan, coba masukan data lagi";
+            echo "Terjadi kesalahan, coba masukan data lagi";
         }
     } else {
         echo "Masukan data terlebih dahulu!";
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SICepu</title>
+    <title>LikesToSnitch</title>
 
     <!-- Custom fonts for this template-->
     <link href="../bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -68,13 +68,13 @@ if(isset($_POST['submit'])) {
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-regular fa-hand-peace"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SICepu</div>
+                <div class="sidebar-brand-text mx-3">LikesToSnitch</div>
             </a>
 
             <!-- Divider -->
@@ -95,29 +95,7 @@ if(isset($_POST['submit'])) {
             <li class="nav-item">
                 <a class="nav-link" href="laporan.php">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Buat Laporan</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Semua Laporan</span>
-                </a>
-            </li>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Selesai</span>
-                </a>
-            </li>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Dalam Proses</span>
+                    <span>Make A Report Here !</span>
                 </a>
             </li>
         </ul>
@@ -136,7 +114,7 @@ if(isset($_POST['submit'])) {
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cool People</span>
                                 <img class="img-profile rounded-circle" src="../bootstrap/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -159,7 +137,7 @@ if(isset($_POST['submit'])) {
 
                     <!-- Page Heading -->
                     <div class="align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-2 text-gray-800">Form Tambah Laporan</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Form For Your Reports</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -169,21 +147,21 @@ if(isset($_POST['submit'])) {
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Silahkan masukan data-data yang diminta!</h6>
+                                    <h6 class="m-0 font-weight-bold text-gray-700">Please input the requested data!</h6>
                                 </div>
 
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <form method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label class="lable-control" for="username">Deskripsi laporan</label>
-                                            <textarea name="message" class="form-control" placeholder="Silahkan Masukan Laporan anda"></textarea>
+                                            <label class="lable-control" for="username">Report Description</label>
+                                            <textarea name="message" class="form-control" placeholder="Enter your report"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label class="lable-control" for="password">Bukti Foto</label>
-                                            <input type="file" name="image" class="form-control" placeholder="Silahkan Masukan Foto">
+                                            <label class="lable-control" for="password">Photo Proof</label>
+                                            <input type="file" name="image" class="form-control" placeholder="Please enter a photo">
                                         </div>
-                                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" name="submit" class="btn btn-dark">Submit</button>
                                     </form>
                                 </div>
 
@@ -199,7 +177,7 @@ if(isset($_POST['submit'])) {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; LiToCh 2024</span>
                     </div>
                 </div>
             </footer>

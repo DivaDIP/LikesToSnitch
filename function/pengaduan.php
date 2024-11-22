@@ -1,7 +1,8 @@
 <?php
 
 // insert data report
-function buat_pengaduan($user_id, $message, $image, $conn) {
+function buat_pengaduan($user_id, $message, $image, $conn)
+{
     // Prepare SQL Injection => mencegah pihak luar memanipulasi data yang ada pada database
     $stmt = $conn->prepare("INSERT INTO reports (user_id, message, image, status, created_at) VALUES (?, ?, ?, ?, NOW())");
 
@@ -17,7 +18,8 @@ function buat_pengaduan($user_id, $message, $image, $conn) {
 
 
 // Mendapatkan data report sesuai id_user, sesuai status
-function get_pengaduan_by_status($username, $status, $conn) {
+function get_pengaduan_by_status($username, $status, $conn)
+{
     // mendapatkan id user
     $query_id = "SELECT id FROM users WHERE username = '$username'";
     $result_id = mysqli_query($conn, $query_id);
@@ -30,7 +32,7 @@ function get_pengaduan_by_status($username, $status, $conn) {
 
     // menyuimpan data yang sudah didapatkan
     $pengaduan = [];
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $pengaduan[] = $row;
     }
 
@@ -38,13 +40,14 @@ function get_pengaduan_by_status($username, $status, $conn) {
 }
 
 // mendapatkan data sesuai status
-function get_all_pengaduan_by_status($status, $conn) {
+function get_all_pengaduan_by_status($status, $conn)
+{
     // membuat query/permintaan
     $query = "SELECT * FROM reports WHERE status = ?";
 
     // prepared statement
     $stmt = $conn->prepare($query);
-    $stmt->bind_param("s",$status);
+    $stmt->bind_param("s", $status);
 
     // eksekusi
     $stmt->execute();
@@ -53,17 +56,17 @@ function get_all_pengaduan_by_status($status, $conn) {
     $result = $stmt->get_result();
 
     $pengaduan = [];
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $pengaduan[] = $row;
     }
 
     return $pengaduan;
-
 }
 
 
 // menambahkan feedback
-function addFeedback($report_id, $petugas_id, $feedback, $conn) {
+function addFeedback($report_id, $petugas_id, $feedback, $conn)
+{
     // kita melakukan 2 operasi sekaligus
     // 1. Menambahkan Feedback
     // 2. Mengubah status report yang tadinya proses menjadi selesai
@@ -76,7 +79,7 @@ function addFeedback($report_id, $petugas_id, $feedback, $conn) {
         $stmt->bind_param("isi", $report_id, $feedback, $petugas_id);
 
         // eksekusi Query
-        if(!$stmt->execute()) {
+        if (!$stmt->execute()) {
             throw new Exception("Gagal menyimpan feedback");
         }
 
@@ -85,7 +88,7 @@ function addFeedback($report_id, $petugas_id, $feedback, $conn) {
         $updateStmt->bind_param("i", $report_id);
 
         // eksekusi Query
-        if(!$updateStmt->execute()) {
+        if (!$updateStmt->execute()) {
             throw new Exception("Gagal update status report");
         }
 
@@ -102,7 +105,63 @@ function addFeedback($report_id, $petugas_id, $feedback, $conn) {
 }
 
 // get reports with feedbacks by status selesai
+function get_reports_with_feedback_status($conn)
+{
+    // melakukan query
+    $query = "SELECT 
+                    reports.id,
+                    users.username AS pelapor,
+                    reports.message,
+                    reports.image,
+                    reports.created_at AS report_date,
+                    feedbacks.feedback,
+                    feedbacks.created_at AS feedback_date
+                    FROM reports
+                    LEFT JOIN feedbacks ON reports.id = feedbacks.report_id
+                    LEFT JOIN users ON reports.user_id = users.id
+                    WHERE reports.status = 'selesai'
+                    ORDER BY reports.created_at DESC";
 
+
+    $result = $conn->query($query);
+
+    // menyimpan data hasil query
+    $data = [];
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    return $data;
+}
 
 // get reports with feedback by user and by status 
-?>
+
+function get_reports_with_feedback_by_user($username, $conn)
+{
+    // ambil user id berdasarkan yang log in
+    $user_id = $conn->query("SELECT id FROM users WHERE username = '$username'")->fetch_assoc()['id'];
+
+    // mendapatkan laporan dengan feedback, juga dengan filter user yang sedang log in
+    $query = "SELECT 
+                reports.id,
+                reports.message,
+                reports.created_at AS report_date,
+                feedbacks.feedback,
+                feedbacks.created_at AS feedback_date
+                FROM reports
+                LEFT JOIN feedbacks ON reports.id = feedbacks.report_id
+                WHERE reports.user_id = ? AND reports.status = 'selesai'
+                ORDER BY reports.created_at DESC";
+
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $data = [];
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    return $data;
+}

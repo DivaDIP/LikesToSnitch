@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SICepu</title>
+    <title>LikesToSnitch</title>
 
     <!-- Custom fonts for this template-->
     <link href="../bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -70,13 +70,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-regular fa-hand-peace"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SICepu</div>
+                <div class="sidebar-brand-text mx-3">LikesToSnitch</div>
             </a>
 
             <!-- Divider -->
@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard-masyarakat.php">
+                <a class="nav-link" href="dashboard-petugas.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -94,16 +94,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <hr class="sidebar-divider">
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="laporan-selesai.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Selesai</span>
+                    <span>Report Completed</span>
                 </a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="laporan-proses.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Dalam Proses</span>
+                    <span>Report In Process</span>
                 </a>
             </li>
         </ul>
@@ -165,7 +165,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             <label for="exampleInputEmail1" class="form-label">Feedback</label>
                                             <textarea name="feedback" placeholder="Masukan feedback anda" rows="3" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Simpan Feedback</button>
+                                        <button type="submit" class="btn btn-primary">Save Feedback</button>
                                     </form>
 
                                 </div>
@@ -174,7 +174,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                 </div>
-                <!-- /.container-fluid -->
+                <!--container-fluid -->
             </div>
             <!-- End of Main Content -->
 
@@ -182,7 +182,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; LiToCh 2021</span>
                     </div>
                 </div>
             </footer>

@@ -20,7 +20,7 @@ if ($_SESSION['role'] != 2) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SICepu</title>
+    <title>LikesToSnitch</title>
 
     <!-- Custom fonts for this template-->
     <link href="../bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -35,13 +35,13 @@ if ($_SESSION['role'] != 2) {
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-regular fa-hand-peace"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SICepu</div>
+                <div class="sidebar-brand-text mx-3">Likestosnitch</div>
             </a>
 
             <!-- Divider -->
@@ -49,7 +49,7 @@ if ($_SESSION['role'] != 2) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard-masyarakat.php">
+                <a class="nav-link" href="dashboard-petugas.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -59,16 +59,16 @@ if ($_SESSION['role'] != 2) {
             <hr class="sidebar-divider">
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="laporan-selesai.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Selesai</span>
+                    <span>Report Completed</span>
                 </a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="laporan-proses.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Laporan Dalam Proses</span>
+                    <span>Report In Process</span>
                 </a>
             </li>
         </ul>
@@ -110,7 +110,7 @@ if ($_SESSION['role'] != 2) {
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Selamat datang <?= $_SESSION['username'] ?> 👋👋</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Hello !, welcome <?= $_SESSION['username'] ?> 👋👋</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -122,7 +122,7 @@ if ($_SESSION['role'] != 2) {
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Laporan Dalam Proses</div>
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Report In pRocess</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">9</div>
                                         </div>
                                         <div class="col-auto">
@@ -139,7 +139,7 @@ if ($_SESSION['role'] != 2) {
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Laporan Selesai</div>
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Report Completed</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">2</div>
@@ -163,11 +163,11 @@ if ($_SESSION['role'] != 2) {
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-warning">Laporan dalam proses</h6>
+                                    <h6 class="m-0 font-weight-bold text-warning">Report In Process</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <h3>Data laporan 1</h3>
+                                    <h3>Report Data</h3>
                                 </div>
                             </div>
                         </div>
@@ -180,11 +180,11 @@ if ($_SESSION['role'] != 2) {
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-success">Laporan Selesai</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Report Completed</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <h3>ini juga pengaduan</h3>
+                                    <h3>This is snitch</h3>
                                 </div>
                             </div>
                         </div>
@@ -199,7 +199,7 @@ if ($_SESSION['role'] != 2) {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; LiToCh 2021</span>
                     </div>
                 </div>
             </footer>

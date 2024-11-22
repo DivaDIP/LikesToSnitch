@@ -3,7 +3,7 @@
 $host       = "localhost";
 $username   = "root";
 $password   = "";
-$db         = "pengaduan";
+$db         = "pengaduan-clone";
 
 $conn = mysqli_connect($host, $username, $password, $db);
 
